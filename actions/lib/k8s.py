@@ -1,6 +1,8 @@
 import base64
 import requests
 
+import json
+
 from st2common.runners.base_action import Action
 
 
@@ -72,6 +74,7 @@ class K8sClient(Action):
 
         kwargs = {}
         kwargs['url'] = self.req['url']
+        # kwargs['data'] = json.dumps(self.req['data'])
         kwargs['json'] = self.req['data']
         kwargs['headers'] = self.req['headers']
         kwargs['verify'] = self.myconfig['verify']

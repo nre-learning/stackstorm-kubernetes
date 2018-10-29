@@ -61,6 +61,11 @@ class K8sClient(Action):
 
         s = requests.Session()
 
+        if self.myconfig['auth_token']:
+            self.req['headers']['Authorization'] = "Bearer %s" % self.myconfig['auth_token']
+        
+        print("TOKEN: %s" % self.myconfig['auth_token'])
+
         if self.clientcert:
             if self.myconfig['client_cert_key_path'] is not None:
                 s.cert = (self.myconfig['client_cert_path'], self.myconfig['client_cert_key_path'])

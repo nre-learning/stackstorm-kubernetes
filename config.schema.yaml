@@ -25,4 +25,8 @@
     type: "string"
     required: true
     default: "/opt/stackstorm/packs/kubernetes/"
+  auth_token:
+    description: "auth token"
+    type: "string"
+    required: true
 

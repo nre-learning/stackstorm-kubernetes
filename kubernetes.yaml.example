@@ -1,6 +1,6 @@
 ---
-    user: ""
-    password: ""
     kubernetes_api_url: "https://kube_api_url"
+    auth_token: ""
+    # just use syringe token: kubectl describe secret -n=prod syringesa-token-*
     verify: true
     template_path: "/opt/stackstorm/packs/kubernetes/"
